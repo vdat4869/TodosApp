@@ -1,1 +1,45 @@
-project-docs
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build and Compilation outputs
+dist/
+**/dist/
+*.tsbuildinfo
+**/*.tsbuildinfo
+.next/
+build/
+out/
+
+# Environment variables and secrets
+.env
+.env.development
+.env.production
+.env.local
+.env.*.local
+**/.env
+**/logs/
+**/*.log
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Database / ORM
+**/generated/prisma/

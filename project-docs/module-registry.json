@@ -1,0 +1,169 @@
+{
+  "_meta": {
+    "project": "TodosApp",
+    "version": "0.0.1",
+    "last_updated": "2026-05-24",
+    "status": "Phase 0 (Foundation Setup) Completed",
+    "description": "Registry of all modules, services, and components. Update as files are created."
+  },
+  "frontend": {
+    "pages": [],
+    "components": [],
+    "hooks": [],
+    "stores": [],
+    "utils": [],
+    "services": [],
+    "types": []
+  },
+  "backend": {
+    "routes": [
+      {
+        "name": "Health Route",
+        "path": "src/modules/health/health.controller.ts",
+        "prefix": "/api/health",
+        "endpoints": ["GET /"],
+        "status": "implemented"
+      }
+    ],
+    "controllers": [
+      {
+        "name": "HealthController",
+        "path": "src/modules/health/health.controller.ts",
+        "description": "App health-check controller",
+        "status": "implemented"
+      }
+    ],
+    "services": [
+      {
+        "name": "PrismaService",
+        "path": "src/database/prisma.service.ts",
+        "description": "Prisma client manager with pg driver adapter and safe pool connection release",
+        "status": "implemented"
+      }
+    ],
+    "models": [],
+    "middleware": [
+      {
+        "name": "HttpExceptionFilter",
+        "path": "src/common/filters/http-exception.filter.ts",
+        "description": "Global exception formatter mapping error responses to { success, message, errorCode, details }",
+        "status": "implemented"
+      },
+      {
+        "name": "TransformInterceptor",
+        "path": "src/common/interceptors/transform.interceptor.ts",
+        "description": "Global response interceptor mapping successful responses to { success, message, data }",
+        "status": "implemented"
+      }
+    ],
+    "utils": [
+      {
+        "name": "loggerInstance",
+        "path": "src/shared/utils/logger.ts",
+        "description": "Winston custom NestJS-like structured console logger config",
+        "status": "implemented"
+      }
+    ],
+    "validators": [
+      {
+        "name": "validate",
+        "path": "src/config/env.validation.ts",
+        "description": "class-validator schema parser ensuring type-safe system environment variables",
+        "status": "implemented"
+      }
+    ]
+  },
+  "shared": {
+    "types": [],
+    "constants": [],
+    "schemas": []
+  },
+  "planned_modules": {
+    "frontend_pages": [
+      {
+        "name": "LoginPage",
+        "path": "src/pages/Login.tsx",
+        "description": "User authentication page",
+        "status": "planned"
+      },
+      {
+        "name": "RegisterPage",
+        "path": "src/pages/Register.tsx",
+        "description": "User registration page",
+        "status": "planned"
+      },
+      {
+        "name": "DashboardPage",
+        "path": "src/pages/Dashboard.tsx",
+        "description": "Main todo list view",
+        "status": "planned"
+      },
+      {
+        "name": "TodoDetailPage",
+        "path": "src/pages/TodoDetail.tsx",
+        "description": "Single todo detail/edit view",
+        "status": "planned"
+      }
+    ],
+    "frontend_components": [
+      {
+        "name": "TodoCard",
+        "path": "src/components/TodoCard.tsx",
+        "description": "Single todo item display card",
+        "props": ["todo", "onToggle", "onDelete", "onEdit"],
+        "status": "planned"
+      },
+      {
+        "name": "TodoList",
+        "path": "src/components/TodoList.tsx",
+        "description": "Filterable, sortable list of todos",
+        "props": ["todos", "filter", "sortBy"],
+        "status": "planned"
+      },
+      {
+        "name": "TodoForm",
+        "path": "src/components/TodoForm.tsx",
+        "description": "Create/edit todo form",
+        "props": ["initialValues", "onSubmit", "onCancel"],
+        "status": "planned"
+      },
+      {
+        "name": "FilterBar",
+        "path": "src/components/FilterBar.tsx",
+        "description": "Filter todos by status/priority/tag",
+        "props": ["filters", "onChange"],
+        "status": "planned"
+      },
+      {
+        "name": "Header",
+        "path": "src/components/Header.tsx",
+        "description": "Top navigation with user info",
+        "props": ["user"],
+        "status": "planned"
+      }
+    ],
+    "backend_routes": [
+      {
+        "name": "auth router",
+        "path": "src/routes/auth.ts",
+        "prefix": "/api/auth",
+        "endpoints": ["POST /register", "POST /login", "POST /logout", "GET /me"],
+        "status": "planned"
+      },
+      {
+        "name": "todos router",
+        "path": "src/routes/todos.ts",
+        "prefix": "/api/todos",
+        "endpoints": ["GET /", "POST /", "GET /:id", "PUT /:id", "DELETE /:id", "PATCH /:id/toggle"],
+        "status": "planned"
+      },
+      {
+        "name": "tags router",
+        "path": "src/routes/tags.ts",
+        "prefix": "/api/tags",
+        "endpoints": ["GET /", "POST /", "DELETE /:id"],
+        "status": "planned"
+      }
+    ]
+  }
+}
